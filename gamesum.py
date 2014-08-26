@@ -12,6 +12,7 @@ import urllib2;
 import xml.dom.minidom as minidom
 import datetime
 import time
+import os
 import io
 import json
 import sys
@@ -54,6 +55,11 @@ comingFixtures='http://people.gaa.ie/api/fixtures/xml?clubID=' + clubId + '&days
 #comingFixtures='http://people.gaa.ie/api/fixtures/xml?clubID=' + clubId + '&daysAfter=' + daysAfter
 recentResults='http://people.gaa.ie/api/fixtures/xml?clubID=' + clubId + '&daysPrevious=' + daysAfter + '&sip=' + sip
 
+# Adjust timezone to London as server may be in different locale.
+os.environ['TZ'] = 'Europe/London'
+time.tzset()
+now = time.strftime("%c")
+print "Last updated: %s" % now
 print "comingFixtures:", comingFixtures
 print "recentResults:", recentResults	
 
@@ -391,7 +397,6 @@ def processRecentResultsToJson():
 	for i in range (0, len(fixtureJson)-1):
 	    x = "%s,"  % (fixtureJson[i])
 	    fixturesJson = fixturesJson + x
-	    print i;
 
 	if (len(fixtureJson) > 0):
 	    fixturesJson = fixturesJson + fixtureJson[len(fixtureJson)-1]
