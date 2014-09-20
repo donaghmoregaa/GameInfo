@@ -176,7 +176,7 @@ def shortenTeamName (teamName):
     teamName = teamName.replace (u"Owen Roe O`Neill's GAC, Leckpatrick", "Owen Roe ")
     teamName = teamName.replace (u"Brockagh Emmetts", "Brockagh")
     teamName = teamName.replace (u"Drumquin Wolfe Tones", "Drumquin")
-    #teamName = teamName.replace (u"Droim Ratha an tSáirsealaigh", "")
+    teamName = teamName.replace (u"Droim Ratha an tSáirsealaigh", "Drumragh")
     teamName = teamName.replace (u"Dregish Pearse Óg", "Dregish")
     teamName = teamName.replace (u"Beragh Red Knights GAA", "Beragh")
 
