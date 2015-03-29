@@ -114,6 +114,8 @@ def getTeamLevel (compName, compNameShort, compLevel):
           teamLevel = "Reserve"
   elif compLevel.find("u21") >= 0:
           teamLevel = "u21"
+  elif compLevel.find("minor") >= 0:
+          teamLevel = "Minor"
   elif compLevel.find("juvenile") >= 0:
 	  teamLevel = "u16"
   elif compLevel.find("underage") >= 0:
@@ -132,6 +134,7 @@ def shortenTeamName (teamName):
 
     teamName = teamName.replace (u"An Droim Mór Naoimh Damhnait", "Dromore")
     teamName = teamName.replace (u"Coalisland Fianna", "Coalisland")
+    teamName = teamName.replace (u"Coalisland GFC", "Coalisland")
     teamName = teamName.replace (u"Omagh St Enda's", "Omagh")
     teamName = teamName.replace (u"Moy Tír na nÓg", "Moy")
     teamName = teamName.replace (u"Clonoe O`Rahilly's CLG", "Clonoe")
@@ -145,6 +148,7 @@ def shortenTeamName (teamName):
     teamName = teamName.replace (u"Augher St Macartan's GFC", "Augher")
     teamName = teamName.replace (u"Greencastle St Patrick's", "Greencastle")
     teamName = teamName.replace (u"Domhnach Mór Naoimh Pádraig", "Donaghmore")
+    teamName = teamName.replace (u"Domhnach Mór", "Donaghmore")
     teamName = teamName.replace (u"Derrylaughan Kevin Barry's GAC", "Derrylaughan")
     teamName = teamName.replace (u"Moortown St Malachy's", "Moortown")
     teamName = teamName.replace (u"Pomeroy Plunketts", "Pomeroy")
@@ -176,9 +180,10 @@ def shortenTeamName (teamName):
     teamName = teamName.replace (u"Owen Roe O`Neill's GAC, Leckpatrick", "Owen Roe ")
     teamName = teamName.replace (u"Brockagh Emmetts", "Brockagh")
     teamName = teamName.replace (u"Drumquin Wolfe Tones", "Drumquin")
-    teamName = teamName.replace (u"Droim Ratha an tSáirsealaigh", "Drumragh")
+    #teamName = teamName.replace (u"Droim Ratha an tSáirsealaigh", "")
     teamName = teamName.replace (u"Dregish Pearse Óg", "Dregish")
     teamName = teamName.replace (u"Beragh Red Knights GAA", "Beragh")
+    teamName = teamName.replace (u"Droim Ratha an tSáirsealaigh", "Drumragh")
 
     return teamName
 
@@ -197,7 +202,10 @@ def shortenVenueName (venueName, homeClub, awayClub):
     if (venueName != ""):
       # Perform replacement cleanup onthe venue name and return
       venueName = venueName.replace (u"Donaghmore GAA", "HOME")
-      venueName = venueName.replace (u"Páirc An tAthair Uí Conghalaigh", "Eglish");
+      venueName = venueName.replace (u"Domhnach Mór", "HOME")
+      venueName = venueName.replace (u"Páirc An tAthair Uí Conghalaigh", "Eglish")
+      venueName = venueName.replace (u"Páirc Uí Raithile", "Clonoe")
+      venueName = venueName.replace (u"Dungannon Thomas Clarke", "Dungannon")
 
       if (venueName == "HOME"):
           venueName = "(" + venueName + ")"
@@ -210,7 +218,7 @@ def shortenVenueName (venueName, homeClub, awayClub):
            venueName = "(HOME)"
        else:
            venueName = "(in " + awayClub + ")"
-    
+
     return venueName
 
 #format the date
