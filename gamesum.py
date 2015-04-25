@@ -144,6 +144,7 @@ def shortenTeamName (teamName):
     teamName = teamName.replace (u"Carrickmore St Colmcille's", "Carrickmore")
     teamName = teamName.replace (u"An Eaglais, Naoimh Pádraig", "Eglish")
     teamName = teamName.replace (u"Cookstown Fr Rocks", "Cookstown")
+    teamName = teamName.replace (u"Cookstown Fr. Rock's GAA", "Cookstown")
     #teamName = teamName.replace (u"Errigal Ciaran", "Errigal Ciaran")
     teamName = teamName.replace (u"Augher St Macartan's GFC", "Augher")
     teamName = teamName.replace (u"Greencastle St Patrick's", "Greencastle")
@@ -162,6 +163,7 @@ def shortenTeamName (teamName):
     teamName = teamName.replace (u"Brackaville Owen Roes", "Brackaville")
     teamName = teamName.replace (u"Kildress Wolfe Tones", "Kildress")
     teamName = teamName.replace (u"Dungannon Thomas Clarkes", "Dungannon")
+    teamName = teamName.replace (u"Dungannon Thomas Clarke GAA", "Dungannon")
     teamName = teamName.replace (u"Aghyaran St Davogs", "Aghyaran")
     teamName = teamName.replace (u"Rock St Patrick's", "Rock")
     teamName = teamName.replace (u"Stewartstown Harps", "Stewartstown")
@@ -217,7 +219,8 @@ def shortenVenueName (venueName, homeClub, awayClub):
        if (homeClub == "Donaghmore"):
            venueName = "(HOME)"
        else:
-           venueName = "(in " + awayClub + ")"
+           venueName = "(in " + homeClub + ")"
+
 
     return venueName
 
